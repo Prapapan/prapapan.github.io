@@ -1,5 +1,8 @@
 $off_white:#fafafa;
 $light_grey:#A39D9E;
+{
+  box-sizing:border-box;
+}
 
 body{
   background-color: $off_white;
