@@ -1,93 +1,123 @@
 <!doctype html>
-<head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>Loading JSON data from the server</title>
-	<script src="../../codebase/dhtmlxscheduler.js?v=20181212" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" href="../../codebase/dhtmlxscheduler_material.css?v=20181212" type="text/css" charset="utf-8">
-	<style type="text/css" >
-		html, body {
-			margin: 0px;
-			padding: 0px;
-			height: 100%;
-			overflow: hidden;
-		}
-	</style>
-	<script type="text/javascript" charset="utf-8">
-		function init() {
-			scheduler.config.xml_date = "%Y-%m-%d %H:%i";
-			scheduler.config.prevent_cache = true;
-			scheduler.config.first_hour = 4;
-			scheduler.config.limit_time_select = true;
-			scheduler.locale.labels.section_location = "Location";
-			scheduler.config.details_on_create = true;
-			scheduler.config.details_on_dblclick = true;
-			scheduler.config.prevent_cache = true;
-
-			scheduler.config.lightbox.sections = [
-				{name:"description", height:130, map_to:"text", type:"textarea" , focus:true},
-				{name:"location", height:43, type:"textarea", map_to:"details" },
-				{name:"time", height:72, type:"time", map_to:"auto"}
-			];
-
-			scheduler.init('scheduler_here', new Date(2017,11, 18), "day");
-			scheduler.load("data/events_json.php", "json");
-
-			var dp = new dataProcessor("data/events_json.php");
-			dp.init(scheduler);
-		}
-	</script>
-	<!-- dhtmlxScheduler -->
-	<!--script src="//cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js"></script>
-	<link rel="stylesheet" href="//cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.css"-->
-
-	<!-- dhtmlxScheduler-Firebase adapter -->
-	<script type="text/javascript" src="../source/dhtmlx_scheduler_firebase.js"></script>
-
-	<!-- FireBase -->
-  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
-
-<!--script>
-	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBKp9q3KDRvpfULY3KEBaXZoIQwXzoJhdA",
-    authDomain: "planner-c7d30.firebaseapp.com",
-    databaseURL: "https://planner-c7d30.firebaseio.com",
-    projectId: "planner-c7d30",
-    storageBucket: "",
-    messagingSenderId: "98899918589"
-  };
-  firebase.initializeApp(config);
-</script-->
-	<script type="text/javascript" charset="utf-8">
-		scheduler.init("scheduler_here");
-
-		firebase.initializeApp({
-        databaseURL: "https://scheduler-firebase.firebaseio.com/"
-    });
-    var db = firebase.database();
-
-    scheduler.firebase(data.ref("events"));
-
-		scheduler.firebaseStop();
-	</script>
-
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="common/docs.css?v=20181212">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="initial-scale = 1.0" />
+		<title>Scheduler : Samples</title></title>
 	</head>
-<body onload="init();">
-<div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
-	<div class="dhx_cal_navline">
-		<div class="dhx_cal_prev_button">&nbsp;</div>
-		<div class="dhx_cal_next_button">&nbsp;</div>
-		<div class="dhx_cal_today_button"></div>
-		<div class="dhx_cal_date"></div>
-		<div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
-		<div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
-		<div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+<body>
+	<div class='abstop_header'>
+		<div class='content_area'>
+		&nbsp;
+		</div>
 	</div>
-	<div class="dhx_cal_header">
+	<div class="page_header">
+		<div class='page_inner_header'>
+			<a href='http://dhtmlx.com'><div class='top_webix_logo'></div></a>
+			Samples
+		</div>
 	</div>
-	<div class="dhx_cal_data">
+
+	<div class="page_space">
+	<div class="webixdoc_page webixdoc_start">
+		<div id="webixContent" class='webixdoc_content'>
+			<div class="webixdoc_content_inner">
+				<div class="webixdoc_breadcrumb nav_breadcrumb">
+					<a href="https://docs.dhtmlx.com/scheduler/" class="webixdoc_back">Documentation</a>
+					<a href="index.html" class="webixdoc_back">Samples</a>
+
+				</div>
+				<table class='nav_table'>
+								<tr>
+				<td style='width:30px;'>
+					<a href='01_initialization_loading'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='01_initialization_loading'>01 Initialization loading</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='02_customization'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='02_customization'>02 Customization</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='03_extensions'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='03_extensions'>03 Extensions</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='04_export'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='04_export'>04 Export</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='05_calendar'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='05_calendar'>05 Calendar</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='07_skins'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='07_skins'>07 Skins</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='08_shared_events'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='08_shared_events'>08 Shared events</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='09_api'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='09_api'>09 Api</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='10_integration'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='10_integration'>10 Integration</a> </td>
+			</tr>
+			<tr>
+				<td style='width:30px;'>
+					<a href='11_scales'><div class='nav_page_img'>&nbsp;</div></a>
+				</td><td> <a href='11_scales'>11 Scales</a> </td>
+			</tr>
+
+				</table>
+			</div>
+		</div>
+
+
+
+
+			</div>
+		</div>
+
+		<!--Side quick links -->
+		<div class="side_links">
+			<a class="reference_link" href="https://docs.dhtmlx.com/scheduler/api__refs__scheduler.html">
+				<span>API Reference</span>
+			</a>
+			<a class="sample_link" href="index.html">
+				<span>Code Samples</span>
+			</a>
+			<a class="forum_link" href="https://forum.dhtmlx.com/viewforum.php?f=15">
+				<span>Developer Forum </span>
+			</a>
+		</div>
 	</div>
-</div>
+	</div>
+
+	<div class="footer_linea">&nbsp;</div>
+	<div class="footer_lineb">
+		<div class='page_inner_header'>
+			<a href='https://dhtmlx.com'><div class='bottom_webix_block bottom_webix_logo' ></div></a>
+			<div class='copyright bottom_webix_block'>© 2018 Dinamenta, UAB<br>
+			All rights reserved</div>
+			<div class='bottom_webix_also'>
+				<h4>Check also:</h4>
+				<li><a href='https://dhtmlx.com/docs/products/dhtmlxGantt/index.shtml' target='_blank'>DHTMLX Gantt</a></li>
+				<li><a href='http://scheduler-net.com/' target='_blank'>DHTMLX Scheduler .NET</a></li>
+				<li><a href='https://dhtmlx.com/docs/products/dhtmlxSuite/index.shtml' target='_blank'>Other DHTMLX components</a></li>
+			</div>
+		</div>
+	</div>
 </body>
+</html>
