@@ -3,65 +3,62 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Light & Dark Calendar</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <title>Basic Form/application/appointment</title>
 
 
-      <link rel="stylesheet" href="css/style.css">
+
 
 
 </head>
 
 <body>
 
-  <div class="container">
-  <div class="calendar light">
-    <div class="calendar_header">
-      <h1 class = "header_title">Welcome Back</h1>
-      <p class="header_copy"> Calendar Plan</p>
-    </div>
-    <div class="calendar_plan">
-      <div class="cl_plan">
-        <div class="cl_title">Today</div>
-        <div class="cl_copy">22nd  April  2018</div>
-        <div class="cl_add">
-          <A class="fas fa-plus" href="https://prapapan.github.io/addEvents.html"></A>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+<body>
+<div class="container">
+
+      <form class="form-group">
+        <h2>Please fill out all information, so that we may better server you.</h2>
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" class="form-control" id="first_name" placeholder="First Name" required autofocus autocomplete="on">
+          <span class="help-block"></span>
         </div>
-      </div>
-    </div>
-    <div class="calendar_events">
-      <p class="ce_title">Upcoming Events</p>
-      <div class="event_item">
-        <div class="ei_Dot dot_active"></div>
-        <div class="ei_Title">10:30 am</div>
-        <div class="ei_Copy">Monday briefing with the team</div>
-      </div>
-      <div class="event_item">
-        <div class="ei_Dot"></div>
-        <div class="ei_Title">12:00 pm</div>
-        <div class="ei_Copy">Lunch for with the besties</div>
-      </div>
-      <div class="event_item">
-        <div class="ei_Dot"></div>
-        <div class="ei_Title">13:00 pm</div>
-        <div class="ei_Copy">Meet with the client for final design <br> @foofinder</div>
-      </div>
-      <div class="event_item">
-        <div class="ei_Dot"></div>
-        <div class="ei_Title">14:30 am</div>
-        <div class="ei_Copy">Plan event night to inspire students</div>
-      </div>
-      <div class="event_item">
-        <div class="ei_Dot"></div>
-        <div class="ei_Title">15:30 am</div>
-        <div class="ei_Copy">Add some more events to the calendar</div>
-      </div>
-    </div>
-  </div>
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" class="form-control" id="last_name" placeholder="Last Name" required autofocus autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="email_address">Email Address</label>
+          <input type="email" class="form-control" id="email_addr" placeholder="Email address" required>
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="email_address_confirm">Please re-confirm your email address.</label>
+          <input type="email" class="form-control" id="email_address_confirm" placeholder="Confirm email address" required autocomplete="off">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone_number">Phone Number</label>
+          <input type="tel" class="form-control" id="phone_number" placeholder="+1-416-967-1111">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" class="form-control" id="dob">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" placeholder="Age" min="1" max="110" required>
+          <span class="help-block"></span>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Make appointment</button>
+      </form>
 
-
-</div>
+    </div> <!-- /container -->
+</body>
 
 
 
