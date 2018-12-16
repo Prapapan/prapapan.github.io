@@ -44,11 +44,11 @@
 	<script type="text/javascript" src="../source/dhtmlx_scheduler_firebase.js"></script>
 
 	<!-- FireBase -->
-	<!-- FireBase -->
-<!--script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+
 <!--script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBKp9q3KDRvpfULY3KEBaXZoIQwXzoJhdA",
@@ -60,6 +60,18 @@
   };
   firebase.initializeApp(config);
 </script-->
+	<script type="text/javascript" charset="utf-8">
+		scheduler.init("scheduler_here");
+
+		firebase.initializeApp({
+        databaseURL: "https://scheduler-firebase.firebaseio.com/"
+    });
+    var db = firebase.database();
+
+    scheduler.firebase(data.ref("events"));
+
+		scheduler.firebaseStop();
+	</script>
 
 	</head>
 <body onload="init();">
