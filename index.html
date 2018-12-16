@@ -36,7 +36,29 @@
 			dp.init(scheduler);
 		}
 	</script>
-</head>
+	<!-- dhtmlxScheduler -->
+	<script src="//cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js"></script>
+	<link rel="stylesheet" href="//cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.css">
+
+	<!-- dhtmlxScheduler-Firebase adapter -->
+	<script type="text/javascript" src="../source/dhtmlx_scheduler_firebase.js"></script>
+
+	<!-- FireBase -->
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBKp9q3KDRvpfULY3KEBaXZoIQwXzoJhdA",
+    authDomain: "planner-c7d30.firebaseapp.com",
+    databaseURL: "https://planner-c7d30.firebaseio.com",
+    projectId: "planner-c7d30",
+    storageBucket: "",
+    messagingSenderId: "98899918589"
+  };
+  firebase.initializeApp(config);
+</script>
+
+	</head>
 <body onload="init();">
 <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
 	<div class="dhx_cal_navline">
