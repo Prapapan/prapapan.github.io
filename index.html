@@ -3,10 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Basic Form/application/appointment</title>
-
-
-
+  <title>Planner</title>
 
 
 </head>
@@ -18,42 +15,37 @@
 <div class="container">
 
       <form class="form-group">
-        <h2>Please fill out all information, so that we may better server you.</h2>
+        <h2>Make an appointment</h2>
         <div class="form-group">
-          <label for="first_name">First Name</label>
-          <input type="text" class="form-control" id="first_name" placeholder="First Name" required autofocus autocomplete="on">
+          <label for="first_name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Name" required>
           <span class="help-block"></span>
         </div>
         <div class="form-group">
-          <label for="last_name">Last Name</label>
-          <input type="text" class="form-control" id="last_name" placeholder="Last Name" required autofocus autocomplete="on">
+          <label for="last_name">Place</label>
+          <input type="text" class="form-control" id="place" placeholder="Place" required>
           <span class="help-block"></span>
         </div>
         <div class="form-group">
-          <label for="email_address">Email Address</label>
-          <input type="email" class="form-control" id="email_addr" placeholder="Email address" required>
+          <label for="dob">From</label>
+          <input type="date" class="form-control" id="from">
           <span class="help-block"></span>
         </div>
-        <div class="form-group">
-          <label for="email_address_confirm">Please re-confirm your email address.</label>
-          <input type="email" class="form-control" id="email_address_confirm" placeholder="Confirm email address" required autocomplete="off">
+				<div class="form-group">
+          <label for="last_name">Time</label>
+          <input type="text" class="form-control" id="stime" placeholder="Start time" required>
           <span class="help-block"></span>
         </div>
-        <div class="form-group">
-          <label for="phone_number">Phone Number</label>
-          <input type="tel" class="form-control" id="phone_number" placeholder="+1-416-967-1111">
+				<div class="form-group">
+          <label for="dob">To</label>
+          <input type="date" class="form-control" id="to">
           <span class="help-block"></span>
         </div>
-        <div class="form-group">
-          <label for="dob">Date of Birth</label>
-          <input type="date" class="form-control" id="dob">
-          <span class="help-block"></span>
-        </div>
-        <div class="form-group">
-          <label for="age">Age</label>
-          <input type="number" class="form-control" id="age" placeholder="Age" min="1" max="110" required>
-          <span class="help-block"></span>
-        </div>
+				<div class="form-group">
+					<label for="last_name">Time</label>
+					<input type="text" class="form-control" id="etime" placeholder="End time" required>
+					<span class="help-block"></span>
+				</div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Make appointment</button>
       </form>
 
